@@ -1,0 +1,80 @@
+random forest classifier:
+asking random questions to multiple ppl 
+and trusting the majority for the prediction 
+
+Truck delay prediction web portal
+Predicts:
+probability that a truck shipment will be delayed
+ 
+based on:
+weather conditions
+truck details
+driver details
+route conditions 
+
+it uses:
+ml model(random forest)
+extraction transformation and loading of data(etl pipeline)
+the streamlit web app for deployment 
+
+so to make smthing like this i need to follow steps:
+
+step 1
+understand the problem
+What am I predicting?
+Example: Will a truck be delayed? (Yes / No)
+
+What type of ML problem?
+Binary classification{0/1}
+
+What inputs will I use?
+Weather, truck info, driver info, route info
+
+What output do I want?
+Probability of delay (not just yes/no)
+
+step 2
+extraction process extract the data get all relevant data inside python
+
+step 3
+Handle missing values
+Separate features & target
+Separate numerical & categorical columns
+Encode categorical data
+Scale numerical data
+Combine processed data
+
+step 4
+split data
+train data using random forest 
+import random forest 
+evaluate modle
+
+step 5
+save the model and processes 
+inorder to deploy
+
+step 6
+build a streamlit app for deployment
+inside load saved files
+take use inputs
+processes use inputs
+predict and show output
+
+step 7 
+run the app
+
+step 8 
+create requirements 
+streamlit
+numpy
+pandas
+scikit-learn
+
+step 9 
+use virtual environment(optional)
+
+so basically:
+Problem → Data → ETL → Model → Save → App → Predict
+
+
