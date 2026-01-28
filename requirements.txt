@@ -1,16 +1,3 @@
-Bottleneck @ file:///C:/miniconda3/conda-bld/bottleneck_1761938096667/work
-joblib @ file:///C:/Users/task_176786734930694/croot/joblib_1767868144277/work
-mkl-service==2.5.2
-mkl_fft @ file:///C:/miniconda3/conda-bld/mkl_fft_1761592981169/work
-mkl_random @ file:///C:/miniconda3/conda-bld/mkl_random_1761593075610/work
-numexpr @ file:///C:/miniconda3/conda-bld/numexpr_1762165723970/work
-numpy @ file:///C:/miniconda3/conda-bld/numpy_and_numpy_base_1761579405538/work/dist/numpy-2.2.5-cp310-cp310-win_amd64.whl#sha256=074bffd27eaf24d54337a4bac76b167c7d794ddb6a813f6fa3fb37c91af766a8
-packaging @ file:///C:/miniconda3/conda-bld/packaging_1761049101700/work
-pandas @ file:///C:/miniconda3/conda-bld/pandas_1762332399653/work/dist/pandas-2.3.3-cp310-cp310-win_amd64.whl#sha256=25368e0adc93a7db0f3983502b4e57344f71af8f45ca3849f7c3833738f306aa
-python-dateutil @ file:///C:/b/abs_3au_koqnbs/croot/python-dateutil_1716495777160/work
-pytz @ file:///C:/b/abs_f8wdzeix0n/croot/pytz_1752135878094/work
-scikit-learn @ file:///C:/b/abs_45qemhn4lg/croot/scikit-learn_1753427401078/work
-scipy @ file:///C:/miniconda3/conda-bld/scipy_1759222090244/work/dist/scipy-1.15.3-cp310-cp310-win_amd64.whl#sha256=2c02ce5f7bc108a9dd2298fac421e55898c14864219396421ffe00419ec8c736
-six @ file:///C:/b/abs_149wuyuo1o/croot/six_1744271521515/work
-threadpoolctl @ file:///C:/miniconda3/conda-bld/threadpoolctl_1764361785970/work
-tzdata @ file:///home/task_176829656558347/croot/python-tzdata_1768296637279/work
+numpy
+pandas
+scikit-learn
