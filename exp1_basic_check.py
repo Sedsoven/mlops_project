@@ -9,3 +9,5 @@ df["target"] = data.target
 print("Dataset loaded successfully")
 print(df.head())
 print("Dataset shape:", df.shape)
+raise ValueError("Simulated dataset error for CI testing")
+
