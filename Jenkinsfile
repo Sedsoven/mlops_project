@@ -11,12 +11,13 @@ pipeline {
 
         stage('Create Virtual Environment') {
             steps {
-                bat 'python -m venv venv'
+                bat '"C:\\Users\\tussi\\AppData\\Local\\Python\\bin\\python.exe" -m venv venv'
             }
         }
 
         stage('Install Dependencies') {
             steps {
+                bat 'venv\\Scripts\\python -m pip install --upgrade pip'
                 bat 'venv\\Scripts\\pip install -r requirements.txt'
             }
         }
