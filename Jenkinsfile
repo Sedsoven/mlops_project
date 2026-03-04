@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Sedsoven/mlops_project.git'
+                git 'https://github.com/Sedsoven/mlops_project.git'
             }
         }
 
@@ -30,22 +30,15 @@ pipeline {
 
         stage('Train Model') {
             steps {
-                bat 'venv\\Scripts\\python vertex_train.py'
-            }
-        }
-
-        stage('Compare Metrics') {
-            steps {
-                bat 'venv\\Scripts\\python compare_metrics.py'
+                bat 'venv\\Scripts\\python train.py'
             }
         }
 
         stage('Archive Artifacts') {
             steps {
-                archiveArtifacts artifacts: '*.pkl', fingerprint: true
-                archiveArtifacts artifacts: 'metrics.json'
-                bat 'copy metrics.json previous_metrics.json'
+                archiveArtifacts artifacts: '*.pkl, *.json', fingerprint: true
             }
         }
+
     }
 }
