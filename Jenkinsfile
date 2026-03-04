@@ -3,12 +3,17 @@ pipeline {
 
     stages {
 
-      stage('Checkout Code') {
+stage('Checkout Code') {
     steps {
-        git branch: 'main', url: 'https://github.com/Sedsoven/mlops_project.git'
+        checkout([
+            $class: 'GitSCM',
+            branches: [[name: '*/main']],
+            userRemoteConfigs: [[
+                url: 'https://github.com/Sedsoven/mlops_project.git'
+            ]]
+        ])
     }
 }
-
         stage('Create Virtual Environment') {
             steps {
                 bat '"C:\\Users\\tussi\\AppData\\Local\\Python\\bin\\python.exe" -m venv venv'
