@@ -95,33 +95,42 @@ scaler = StandardScaler()
 
 scaler.fit(X_train[num_cols])
 
-X_train[num_cols] = scaler.transform(X_train[num_cols])
-X_test[num_cols] = scaler.transform(X_test[num_cols])
+import pandas as pd
+from sklearn.datasets import load_wine
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+import joblib
+import json
 
-# -------------------------------
-# Train Model
-# -------------------------------
+# Load dataset
+data = load_wine()
+X = data.data
+y = data.target
 
-model = RandomForestClassifier(n_estimators=100)
+# Train test split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
 
+# Train model
+model = RandomForestClassifier()
 model.fit(X_train, y_train)
 
+# Predict
 pred = model.predict(X_test)
 
+# Accuracy
 accuracy = accuracy_score(y_test, pred)
-
 print("Model Accuracy:", accuracy)
 
-# -------------------------------
-# Save Model + Metrics
-# -------------------------------
+# Save model
+joblib.dump(model, "model.pkl")
 
-with open("model.pkl", "wb") as f:
-    pickle.dump(model, f)
-
-metrics = {"accuracy": float(accuracy)}
+# Save metrics
+metrics = {"accuracy": accuracy}
 
 with open("metrics.json", "w") as f:
     json.dump(metrics, f)
 
-print("Model and metrics saved successfully")
+print("Training completed and model + metrics saved.")
